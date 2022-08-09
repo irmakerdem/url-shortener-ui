@@ -1,4 +1,6 @@
 {
   "long_url": "https://www.pexels.com/photo/brown-cat-with-green-eyes-617278/",
-  "title": "green eyed cat"
+  "title": "green eyed cat",
+  "id": 3,
+  "short_url": "http://localhost:3001/useshorturl/3"
 }
