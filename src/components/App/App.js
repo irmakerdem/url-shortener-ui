@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getUrls } from '../../apiCalls';
+import { getUrls, postUrls } from '../../apiCalls';
 import UrlContainer from '../UrlContainer/UrlContainer';
 import UrlForm from '../UrlForm/UrlForm';
 
@@ -21,12 +21,17 @@ export class App extends Component {
     .catch(err => console.error('Error happened while fetching', err));
   }
 
+  addUrl = (newUrl) => {
+    postUrls(newUrl)
+    this.setState( {urls: [...this.state.urls, newUrl] } )
+  }
+
   render() {
     return (
       <main className="App">
         <header>
           <h1>URL Shortener</h1>
-          <UrlForm />
+          <UrlForm addUrl={this.addUrl}/>
         </header>
 
         <UrlContainer urls={this.state.urls}/>
