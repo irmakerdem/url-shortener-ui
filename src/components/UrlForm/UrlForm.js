@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { postUrls } from '../../apiCalls';
 
 class UrlForm extends Component {
   constructor(props) {
@@ -11,11 +12,13 @@ class UrlForm extends Component {
   }
 
   handleNameChange = e => {
+    console.log("14", e.target.name)
     this.setState({ [e.target.name]: e.target.value });
   }
 
   handleSubmit = e => {
     e.preventDefault();
+    postUrls()
     this.clearInputs();
   }
 
