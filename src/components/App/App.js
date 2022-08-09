@@ -15,7 +15,6 @@ export class App extends Component {
   componentDidMount() {
     getUrls()
     .then(data => {
-      console.log(data.urls)
       this.setState({ urls: data.urls})
     })
     .catch(err => console.error('Error happened while fetching', err));
@@ -33,7 +32,6 @@ export class App extends Component {
           <h1>URL Shortener</h1>
           <UrlForm addUrl={this.addUrl}/>
         </header>
-
         <UrlContainer urls={this.state.urls}/>
       </main>
     );
