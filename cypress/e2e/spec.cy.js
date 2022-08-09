@@ -22,6 +22,8 @@ describe('URL Shortener', () => {
   it('Should display two inputs and a button', () => {
     cy.get('[placeholder="Title..."]').should('be.visible')
     cy.get('[placeholder="URL to Shorten..."]').should('be.visible')
+    cy.get('button').should('be.visible')
+    cy.get('button').contains('Shorten Please!')
   })
 
   it('Should allow user to submit form and display new url card', () => {
@@ -36,4 +38,5 @@ describe('URL Shortener', () => {
     cy.get(':nth-child(3) > a').contains('http://localhost:3001/useshorturl/3')
     cy.get(':nth-child(3) > p').contains('https://www.pexels.com/photo/brown-cat-with-green-eyes-617278/')
   })
+  
 })
